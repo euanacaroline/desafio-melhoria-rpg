@@ -17,7 +17,11 @@ class Vilao(Personagem):
         Reduz a vida de outro personagem atacado pelo vilão.
         """
         print(f'{self.nome} atacou {personagem.nome}!')
-        personagem.downgrade_vida()
+
+        if self.maldade == 'Alta':
+            personagem.downgrade_vida(20)
+        else: 
+            personagem.downgrade_vida(15)
 
     def __str__(self):
         return f'Vilão: {self.nome}, Idade: {self.idade}, Vida: {self.vida}, Maldade: {self.maldade}'
